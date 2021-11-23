@@ -1,0 +1,8 @@
+
+State Machine - |ramcpld|state
+Name state.state_bit_2 state.state_bit_1 state.state_bit_0 
+state.000 0 0 0 
+state.CYCLE_CAS 1 0 0 
+state.CYCLE_WAIT 1 0 1 
+state.CYCLE_CBR1 0 0 1 
+state.CYCLE_CBR2 0 1 0 
