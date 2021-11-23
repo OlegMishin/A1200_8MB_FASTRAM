@@ -1,0 +1,709 @@
+Fitter report for pld_ram
+Sat Jun 19 12:32:56 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Pin-Out File
+  6. Fitter Resource Usage Summary
+  7. Input Pins
+  8. Output Pins
+  9. Bidir Pins
+ 10. All Package Pins
+ 11. I/O Standard
+ 12. Dedicated Inputs I/O
+ 13. Output Pin Default Load For Reported TCO
+ 14. Fitter Resource Utilization by Entity
+ 15. Control Signals
+ 16. Global & Other Fast Signals
+ 17. Non-Global High Fan-Out Signals
+ 18. Other Routing Usage Summary
+ 19. LAB External Interconnect
+ 20. LAB Macrocells
+ 21. Parallel Expander
+ 22. Shareable Expander
+ 23. Logic Cell Interconnection
+ 24. Fitter Device Options
+ 25. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Fitter Summary                                                              ;
++---------------------------+-------------------------------------------------+
+; Fitter Status             ; Successful - Sat Jun 19 12:32:56 2021           ;
+; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name             ; pld_ram                                         ;
+; Top-level Entity Name     ; ramcpld                                         ;
+; Family                    ; MAX7000S                                        ;
+; Device                    ; EPM7128STC100-10                                ;
+; Timing Models             ; Final                                           ;
+; Total macrocells          ; 68 / 128 ( 53 % )                               ;
+; Total pins                ; 81 / 84 ( 96 % )                                ;
++---------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                               ;
++----------------------------------------------------------------------------+------------------+---------------+
+; Option                                                                     ; Setting          ; Default Value ;
++----------------------------------------------------------------------------+------------------+---------------+
+; Device                                                                     ; EPM7128STC100-10 ;               ;
+; Use smart compilation                                                      ; Off              ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On               ; On            ;
+; Enable compact report table                                                ; Off              ; Off           ;
+; Optimize Multi-Corner Timing                                               ; Off              ; Off           ;
+; Optimize Timing for ECOs                                                   ; Off              ; Off           ;
+; Regenerate full fit report during ECO compiles                             ; Off              ; Off           ;
+; Optimize IOC Register Placement for Timing                                 ; Normal           ; Normal        ;
+; Fitter Initial Placement Seed                                              ; 1                ; 1             ;
+; Slow Slew Rate                                                             ; Off              ; Off           ;
+; Fitter Effort                                                              ; Auto Fit         ; Auto Fit      ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off              ; Off           ;
++----------------------------------------------------------------------------+------------------+---------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in U:/work/Amiga/A1200/8MB_RAM/PLD_RAM_rev2/output_files/pld_ram.pin.
+
+
++--------------------------------------------------+
+; Fitter Resource Usage Summary                    ;
++------------------------------+-------------------+
+; Resource                     ; Usage             ;
++------------------------------+-------------------+
+; Logic cells                  ; 68 / 128 ( 53 % ) ;
+; Registers                    ; 31 / 128 ( 24 % ) ;
+; Number of pterms used        ; 187               ;
+; I/O pins                     ; 81 / 84 ( 96 % )  ;
+;     -- Clock pins            ; 2 / 2 ( 100 % )   ;
+;     -- Dedicated input pins  ; 2 / 2 ( 100 % )   ;
+;                              ;                   ;
+; Global signals               ; 1                 ;
+; Shareable expanders          ; 11 / 128 ( 9 % )  ;
+; Parallel expanders           ; 11 / 120 ( 9 % )  ;
+; Cells using turbo bit        ; 68 / 128 ( 53 % ) ;
+; Maximum fan-out              ; 31                ;
+; Highest non-global fan-out   ; 31                ;
+; Total fan-out                ; 586               ;
+; Average fan-out              ; 3.66              ;
++------------------------------+-------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                    ;
++---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+; Name    ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; I/O Standard ; Location assigned by ;
++---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+; AS20    ; 90    ; --       ; --  ; 31                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[0]    ; 31    ; --       ; 4   ; 5                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[10]   ; 20    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[11]   ; 21    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[12]   ; 19    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[13]   ; 17    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[14]   ; 14    ; --       ; 2   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[15]   ; 16    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[16]   ; 12    ; --       ; 2   ; 10                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[17]   ; 13    ; --       ; 2   ; 10                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[18]   ; 8     ; --       ; 2   ; 10                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[19]   ; 10    ; --       ; 2   ; 14                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[1]    ; 32    ; --       ; 4   ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[20]   ; 6     ; --       ; 2   ; 15                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[21]   ; 9     ; --       ; 2   ; 24                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[22]   ; 5     ; --       ; 2   ; 22                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[23]   ; 7     ; --       ; 2   ; 22                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[2]    ; 28    ; --       ; 4   ; 9                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[3]    ; 30    ; --       ; 4   ; 9                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[4]    ; 27    ; --       ; 4   ; 8                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[5]    ; 29    ; --       ; 4   ; 9                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[6]    ; 24    ; --       ; 3   ; 9                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[7]    ; 25    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[8]    ; 22    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[9]    ; 23    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; CLKCPU  ; 87    ; --       ; --  ; 24                    ; 0                  ; yes    ; no             ; TTL          ; User                 ;
+; DS20    ; 45    ; --       ; 5   ; 10                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; IDENT   ; 61    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; IOR     ; 63    ; --       ; 7   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; IOW     ; 67    ; --       ; 7   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; IPL[0]  ; 36    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; IPL[1]  ; 35    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; IPL[2]  ; 42    ; --       ; 5   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; MEMSIZE ; 1     ; --       ; 1   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; RESET   ; 89    ; --       ; --  ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; RS2     ; 33    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; RW20    ; 88    ; --       ; --  ; 19                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; SIZ[0]  ; 44    ; --       ; 5   ; 4                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; SIZ[1]  ; 46    ; --       ; 5   ; 4                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
++---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                  ;
++----------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; Name     ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++----------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; CAS[0]   ; 69    ; --       ; 7   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; CAS[1]   ; 71    ; --       ; 7   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; CAS[2]   ; 70    ; --       ; 7   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; CAS[3]   ; 72    ; --       ; 7   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; DSACK[0] ; 47    ; --       ; 5   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; DSACK[1] ; 48    ; --       ; 5   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; INT2     ; 41    ; --       ; 5   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; LED      ; 2     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAMOE    ; 58    ; --       ; 6   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAM_A[0] ; 78    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAM_A[1] ; 80    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAM_A[2] ; 83    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAM_A[3] ; 85    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAM_A[4] ; 84    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAM_A[5] ; 81    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAM_A[6] ; 79    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAM_A[7] ; 77    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAM_A[8] ; 76    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAM_A[9] ; 75    ; --       ; 8   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAS[0]   ; 60    ; --       ; 6   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; RAS[1]   ; 68    ; --       ; 7   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; TEST[0]  ; 100   ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; TEST[1]  ; 99    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; TEST[2]  ; 98    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; TEST[3]  ; 97    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; TEST[4]  ; 96    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; TEST[5]  ; 94    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; TEST[6]  ; 93    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; TEST[7]  ; 92    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; nOVR     ; 40    ; --       ; 5   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
++----------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Bidir Pins                                                                                                                                                                                                                                      ;
++------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
+; Name ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Slow Slew Rate ; Open Drain ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
+; D[0] ; 57    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~1 (inverted)    ; -                   ;
+; D[1] ; 56    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~2 (inverted)    ; -                   ;
+; D[2] ; 55    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~3 (inverted)    ; -                   ;
+; D[3] ; 54    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; yes        ; TTL          ; User                 ; 10 pF ; ~VCC~4 (inverted)    ; -                   ;
+; D[4] ; 53    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; comb~21 (inverted)   ; -                   ;
+; D[5] ; 52    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; comb~21 (inverted)   ; -                   ;
+; D[6] ; 50    ; --       ; 5   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; comb~21 (inverted)   ; -                   ;
+; D[7] ; 49    ; --       ; 5   ; 0                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; comb~21 (inverted)   ; -                   ;
++------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+----------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                      ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage ; User Assignment ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; 1        ; 12         ; --       ; MEMSIZE        ; input  ; TTL          ;         ; Y               ;
+; 2        ; 13         ; --       ; LED            ; output ; TTL          ;         ; Y               ;
+; 3        ; 14         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 4        ; 15         ; --       ; TDI            ; input  ; TTL          ;         ; N               ;
+; 5        ; 16         ; --       ; A[22]          ; input  ; TTL          ;         ; Y               ;
+; 6        ; 17         ; --       ; A[20]          ; input  ; TTL          ;         ; Y               ;
+; 7        ; 18         ; --       ; A[23]          ; input  ; TTL          ;         ; Y               ;
+; 8        ; 19         ; --       ; A[18]          ; input  ; TTL          ;         ; Y               ;
+; 9        ; 20         ; --       ; A[21]          ; input  ; TTL          ;         ; Y               ;
+; 10       ; 21         ; --       ; A[19]          ; input  ; TTL          ;         ; Y               ;
+; 11       ; 22         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 12       ; 23         ; --       ; A[16]          ; input  ; TTL          ;         ; Y               ;
+; 13       ; 24         ; --       ; A[17]          ; input  ; TTL          ;         ; Y               ;
+; 14       ; 25         ; --       ; A[14]          ; input  ; TTL          ;         ; Y               ;
+; 15       ; 26         ; --       ; TMS            ; input  ; TTL          ;         ; N               ;
+; 16       ; 27         ; --       ; A[15]          ; input  ; TTL          ;         ; Y               ;
+; 17       ; 28         ; --       ; A[13]          ; input  ; TTL          ;         ; Y               ;
+; 18       ; 29         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 19       ; 30         ; --       ; A[12]          ; input  ; TTL          ;         ; Y               ;
+; 20       ; 31         ; --       ; A[10]          ; input  ; TTL          ;         ; Y               ;
+; 21       ; 32         ; --       ; A[11]          ; input  ; TTL          ;         ; Y               ;
+; 22       ; 33         ; --       ; A[8]           ; input  ; TTL          ;         ; Y               ;
+; 23       ; 34         ; --       ; A[9]           ; input  ; TTL          ;         ; Y               ;
+; 24       ; 35         ; --       ; A[6]           ; input  ; TTL          ;         ; Y               ;
+; 25       ; 36         ; --       ; A[7]           ; input  ; TTL          ;         ; Y               ;
+; 26       ; 37         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 27       ; 38         ; --       ; A[4]           ; input  ; TTL          ;         ; Y               ;
+; 28       ; 39         ; --       ; A[2]           ; input  ; TTL          ;         ; Y               ;
+; 29       ; 40         ; --       ; A[5]           ; input  ; TTL          ;         ; Y               ;
+; 30       ; 41         ; --       ; A[3]           ; input  ; TTL          ;         ; Y               ;
+; 31       ; 42         ; --       ; A[0]           ; input  ; TTL          ;         ; Y               ;
+; 32       ; 43         ; --       ; A[1]           ; input  ; TTL          ;         ; Y               ;
+; 33       ; 44         ; --       ; RS2            ; input  ; TTL          ;         ; Y               ;
+; 34       ; 45         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 35       ; 46         ; --       ; IPL[1]         ; input  ; TTL          ;         ; Y               ;
+; 36       ; 47         ; --       ; IPL[0]         ; input  ; TTL          ;         ; Y               ;
+; 37       ; 48         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 38       ; 49         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 39       ; 50         ; --       ; VCCINT         ; power  ;              ; 5.0V    ;                 ;
+; 40       ; 51         ; --       ; nOVR           ; output ; TTL          ;         ; Y               ;
+; 41       ; 52         ; --       ; INT2           ; output ; TTL          ;         ; Y               ;
+; 42       ; 53         ; --       ; IPL[2]         ; input  ; TTL          ;         ; Y               ;
+; 43       ; 54         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 44       ; 55         ; --       ; SIZ[0]         ; input  ; TTL          ;         ; Y               ;
+; 45       ; 56         ; --       ; DS20           ; input  ; TTL          ;         ; Y               ;
+; 46       ; 57         ; --       ; SIZ[1]         ; input  ; TTL          ;         ; Y               ;
+; 47       ; 58         ; --       ; DSACK[0]       ; output ; TTL          ;         ; Y               ;
+; 48       ; 59         ; --       ; DSACK[1]       ; output ; TTL          ;         ; Y               ;
+; 49       ; 60         ; --       ; D[7]           ; bidir  ; TTL          ;         ; Y               ;
+; 50       ; 61         ; --       ; D[6]           ; bidir  ; TTL          ;         ; Y               ;
+; 51       ; 62         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 52       ; 63         ; --       ; D[5]           ; bidir  ; TTL          ;         ; Y               ;
+; 53       ; 64         ; --       ; D[4]           ; bidir  ; TTL          ;         ; Y               ;
+; 54       ; 65         ; --       ; D[3]           ; bidir  ; TTL          ;         ; Y               ;
+; 55       ; 66         ; --       ; D[2]           ; bidir  ; TTL          ;         ; Y               ;
+; 56       ; 67         ; --       ; D[1]           ; bidir  ; TTL          ;         ; Y               ;
+; 57       ; 68         ; --       ; D[0]           ; bidir  ; TTL          ;         ; Y               ;
+; 58       ; 69         ; --       ; RAMOE          ; output ; TTL          ;         ; Y               ;
+; 59       ; 70         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 60       ; 71         ; --       ; RAS[0]         ; output ; TTL          ;         ; Y               ;
+; 61       ; 72         ; --       ; IDENT          ; input  ; TTL          ;         ; Y               ;
+; 62       ; 73         ; --       ; TCK            ; input  ; TTL          ;         ; N               ;
+; 63       ; 74         ; --       ; IOR            ; input  ; TTL          ;         ; Y               ;
+; 64       ; 75         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 65       ; 76         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 66       ; 77         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 67       ; 78         ; --       ; IOW            ; input  ; TTL          ;         ; Y               ;
+; 68       ; 79         ; --       ; RAS[1]         ; output ; TTL          ;         ; Y               ;
+; 69       ; 80         ; --       ; CAS[0]         ; output ; TTL          ;         ; Y               ;
+; 70       ; 81         ; --       ; CAS[2]         ; output ; TTL          ;         ; Y               ;
+; 71       ; 82         ; --       ; CAS[1]         ; output ; TTL          ;         ; Y               ;
+; 72       ; 83         ; --       ; CAS[3]         ; output ; TTL          ;         ; Y               ;
+; 73       ; 84         ; --       ; TDO            ; output ; TTL          ;         ; N               ;
+; 74       ; 85         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 75       ; 86         ; --       ; RAM_A[9]       ; output ; TTL          ;         ; Y               ;
+; 76       ; 87         ; --       ; RAM_A[8]       ; output ; TTL          ;         ; Y               ;
+; 77       ; 88         ; --       ; RAM_A[7]       ; output ; TTL          ;         ; Y               ;
+; 78       ; 89         ; --       ; RAM_A[0]       ; output ; TTL          ;         ; Y               ;
+; 79       ; 90         ; --       ; RAM_A[6]       ; output ; TTL          ;         ; Y               ;
+; 80       ; 91         ; --       ; RAM_A[1]       ; output ; TTL          ;         ; Y               ;
+; 81       ; 92         ; --       ; RAM_A[5]       ; output ; TTL          ;         ; Y               ;
+; 82       ; 93         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 83       ; 94         ; --       ; RAM_A[2]       ; output ; TTL          ;         ; Y               ;
+; 84       ; 95         ; --       ; RAM_A[4]       ; output ; TTL          ;         ; Y               ;
+; 85       ; 96         ; --       ; RAM_A[3]       ; output ; TTL          ;         ; Y               ;
+; 86       ; 97         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 87       ; 98         ; --       ; CLKCPU         ; input  ; TTL          ;         ; Y               ;
+; 88       ; 99         ; --       ; RW20           ; input  ; TTL          ;         ; Y               ;
+; 89       ; 0          ; --       ; RESET          ; input  ; TTL          ;         ; Y               ;
+; 90       ; 1          ; --       ; AS20           ; input  ; TTL          ;         ; Y               ;
+; 91       ; 2          ; --       ; VCCINT         ; power  ;              ; 5.0V    ;                 ;
+; 92       ; 3          ; --       ; TEST[7]        ; output ; TTL          ;         ; Y               ;
+; 93       ; 4          ; --       ; TEST[6]        ; output ; TTL          ;         ; Y               ;
+; 94       ; 5          ; --       ; TEST[5]        ; output ; TTL          ;         ; Y               ;
+; 95       ; 6          ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 96       ; 7          ; --       ; TEST[4]        ; output ; TTL          ;         ; Y               ;
+; 97       ; 8          ; --       ; TEST[3]        ; output ; TTL          ;         ; Y               ;
+; 98       ; 9          ; --       ; TEST[2]        ; output ; TTL          ;         ; Y               ;
+; 99       ; 10         ; --       ; TEST[1]        ; output ; TTL          ;         ; Y               ;
+; 100      ; 11         ; --       ; TEST[0]        ; output ; TTL          ;         ; Y               ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++--------------------------------------------------------------------------------------------------+
+; I/O Standard                                                                                     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; I/O Standard ; Input Vref ; Dedicated Input Pins ; Pins in I/O Bank1 ; Pins in I/O Bank2 ; Total ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; TTL          ; -          ; 4                    ; 0                 ; 0                 ; 4     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+
+
++----------------------------------------------------------------------+
+; Dedicated Inputs I/O                                                 ;
++--------+-------+-------+-------+--------------+------------+---------+
+; Name   ; Pin # ; Type  ; VCCIO ; I/O Standard ; Input Vref ; Current ;
++--------+-------+-------+-------+--------------+------------+---------+
+; AS20   ; 90    ; Input ; --    ; TTL          ; -          ; 0 mA    ;
+; CLKCPU ; 87    ; Input ; --    ; TTL          ; -          ; 0 mA    ;
+; RESET  ; 89    ; Input ; --    ; TTL          ; -          ; 0 mA    ;
+; RW20   ; 88    ; Input ; --    ; TTL          ; -          ; 0 mA    ;
++--------+-------+-------+-------+--------------+------------+---------+
+
+
++-----------------------------------------------+
+; Output Pin Default Load For Reported TCO      ;
++--------------+-------+------------------------+
+; I/O Standard ; Load  ; Termination Resistance ;
++--------------+-------+------------------------+
+; 3.3-V LVTTL  ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS ; 10 pF ; Not Available          ;
+; TTL          ; 10 pF ; Not Available          ;
++--------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++-------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                               ;
++----------------------------+------------+------+---------------------+--------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+------------+------+---------------------+--------------+
+; |ramcpld                   ; 68         ; 81   ; |ramcpld            ; work         ;
++----------------------------+------------+------+---------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                   ;
++----------------------+----------+---------+------------------------------------+--------+----------------------+------------------+
+; Name                 ; Location ; Fan-Out ; Usage                              ; Global ; Global Resource Used ; Global Line Name ;
++----------------------+----------+---------+------------------------------------+--------+----------------------+------------------+
+; AS20                 ; PIN_90   ; 31      ; Async. clear, Clock enable, Preset ; no     ; --                   ; --               ;
+; CLKCPU               ; PIN_87   ; 24      ; Clock                              ; yes    ; On                   ; --               ;
+; DS20                 ; PIN_45   ; 10      ; Clock                              ; no     ; --                   ; --               ;
+; Selector12~1bal      ; LC87     ; 1       ; Clock enable                       ; no     ; --                   ; --               ;
+; comb~16              ; SEXP1    ; 2       ; Async. clear                       ; no     ; --                   ; --               ;
+; state.state_bit_0    ; LC19     ; 27      ; Clock enable                       ; no     ; --                   ; --               ;
+; state.state_bit_1    ; LC20     ; 20      ; Clock enable                       ; no     ; --                   ; --               ;
+; state.state_bit_2    ; LC99     ; 28      ; Clock enable                       ; no     ; --                   ; --               ;
+; state.state_bit_2~16 ; LC112    ; 1       ; Clock enable                       ; no     ; --                   ; --               ;
++----------------------+----------+---------+------------------------------------+--------+----------------------+------------------+
+
+
++-----------------------------------------------------------------------+
+; Global & Other Fast Signals                                           ;
++--------+----------+---------+----------------------+------------------+
+; Name   ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
++--------+----------+---------+----------------------+------------------+
+; CLKCPU ; PIN_87   ; 24      ; On                   ; --               ;
++--------+----------+---------+----------------------+------------------+
+
+
++---------------------------------+
+; Non-Global High Fan-Out Signals ;
++----------------------+----------+
+; Name                 ; Fan-Out  ;
++----------------------+----------+
+; AS20                 ; 31       ;
+; state.state_bit_2    ; 28       ;
+; state.state_bit_0    ; 27       ;
+; A[21]                ; 24       ;
+; A[23]                ; 22       ;
+; A[22]                ; 22       ;
+; state.state_bit_1    ; 20       ;
+; RW20                 ; 19       ;
+; A[20]                ; 15       ;
+; half_ram             ; 15       ;
+; A[19]                ; 14       ;
+; A[1]                 ; 13       ;
+; RESET                ; 13       ;
+; POR[2]               ; 13       ;
+; refresh_req          ; 11       ;
+; DS20                 ; 10       ;
+; A[18]                ; 10       ;
+; A[17]                ; 10       ;
+; A[16]                ; 10       ;
+; RAM_MUX              ; 10       ;
+; configured           ; 10       ;
+; A[6]                 ; 9        ;
+; A[5]                 ; 9        ;
+; A[3]                 ; 9        ;
+; A[2]                 ; 9        ;
+; refresh_count[5]     ; 9        ;
+; refresh_count[4]     ; 9        ;
+; refresh_count[3]     ; 9        ;
+; A[4]                 ; 8        ;
+; refresh_count[2]     ; 8        ;
+; refresh_count[0]     ; 8        ;
+; shutup               ; 8        ;
+; AS20_D               ; 8        ;
+; refresh_count[1]     ; 7        ;
+; A[0]                 ; 5        ;
+; comb~21              ; 5        ;
+; SIZ[1]               ; 4        ;
+; SIZ[0]               ; 4        ;
+; RAS[0]~reg0          ; 3        ;
+; RAS[1]~reg0          ; 3        ;
+; CAS[0]~reg0          ; 2        ;
+; CAS[1]~reg0          ; 2        ;
+; CAS[2]~reg0          ; 2        ;
+; CAS[3]~reg0          ; 2        ;
+; RAM_READY            ; 2        ;
+; data_out[4]          ; 2        ;
+; data_out[5]          ; 2        ;
+; data_out[6]          ; 2        ;
+; debug_bit            ; 2        ;
+; data_out[7]          ; 2        ;
+; comb~16              ; 2        ;
+; nOVR~17              ; 1        ;
+; MEMSIZE              ; 1        ;
+; A[15]                ; 1        ;
+; A[14]                ; 1        ;
+; A[13]                ; 1        ;
+; A[12]                ; 1        ;
+; A[11]                ; 1        ;
+; A[10]                ; 1        ;
+; A[9]                 ; 1        ;
+; A[8]                 ; 1        ;
+; A[7]                 ; 1        ;
+; Selector12~1bal      ; 1        ;
+; nOVR~15              ; 1        ;
+; WideAnd0~10sexp4     ; 1        ;
+; WideAnd0~10sexp3     ; 1        ;
+; WideAnd0~10sexp2     ; 1        ;
+; WideAnd0~10sexp1     ; 1        ;
+; WideAnd1~4sexp2      ; 1        ;
+; WideAnd1~4sexp1      ; 1        ;
+; ~VCC~4               ; 1        ;
+; ~VCC~3               ; 1        ;
+; ~VCC~2               ; 1        ;
+; ~VCC~1               ; 1        ;
+; ~VCC~0               ; 1        ;
+; Selector4~10         ; 1        ;
+; Selector3~11         ; 1        ;
+; state.state_bit_2~23 ; 1        ;
+; Selector7~15         ; 1        ;
+; Selector6~13         ; 1        ;
+; state.state_bit_2~17 ; 1        ;
+; data_out[4]~45       ; 1        ;
+; data_out[6]~43       ; 1        ;
+; refresh_count[1]~72  ; 1        ;
+; refresh_count[0]~67  ; 1        ;
+; RAM_A~59             ; 1        ;
+; RAM_A~56             ; 1        ;
+; RAM_A~53             ; 1        ;
+; RAM_A~50             ; 1        ;
+; RAM_A~47             ; 1        ;
+; RAM_A~44             ; 1        ;
+; RAM_A~41             ; 1        ;
+; RAM_A~38             ; 1        ;
+; RAM_A~35             ; 1        ;
+; RAM_A~32             ; 1        ;
+; state.state_bit_2~16 ; 1        ;
+; RAMOE~reg0           ; 1        ;
+; Selector8~12         ; 1        ;
+; Selector8~11         ; 1        ;
+; Selector8~10         ; 1        ;
+; Selector8~9          ; 1        ;
+; DSACK~4              ; 1        ;
+; nOVR~12              ; 1        ;
+; configured~11        ; 1        ;
+; comb~19              ; 1        ;
+; comb~14              ; 1        ;
+; POR[1]               ; 1        ;
+; Equal0~4             ; 1        ;
+; POR[0]               ; 1        ;
+; comb~11              ; 1        ;
++----------------------+----------+
+
+
++--------------------------------------------------+
+; Other Routing Usage Summary                      ;
++-----------------------------+--------------------+
+; Other Routing Resource Type ; Usage              ;
++-----------------------------+--------------------+
+; Output enables              ; 1 / 6 ( 17 % )     ;
+; PIA buffers                 ; 118 / 288 ( 41 % ) ;
+; PIAs                        ; 141 / 288 ( 49 % ) ;
++-----------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB External Interconnect                                                   ;
++-----------------------------------------------+-----------------------------+
+; LAB External Interconnects  (Average = 17.63) ; Number of LABs  (Total = 6) ;
++-----------------------------------------------+-----------------------------+
+; 0 - 2                                         ; 2                           ;
+; 3 - 5                                         ; 0                           ;
+; 6 - 8                                         ; 0                           ;
+; 9 - 11                                        ; 0                           ;
+; 12 - 14                                       ; 1                           ;
+; 15 - 17                                       ; 0                           ;
+; 18 - 20                                       ; 0                           ;
+; 21 - 23                                       ; 1                           ;
+; 24 - 26                                       ; 2                           ;
+; 27 - 29                                       ; 2                           ;
++-----------------------------------------------+-----------------------------+
+
+
++----------------------------------------------------------------------+
+; LAB Macrocells                                                       ;
++----------------------------------------+-----------------------------+
+; Number of Macrocells  (Average = 8.50) ; Number of LABs  (Total = 6) ;
++----------------------------------------+-----------------------------+
+; 0                                      ; 2                           ;
+; 1                                      ; 0                           ;
+; 2                                      ; 0                           ;
+; 3                                      ; 0                           ;
+; 4                                      ; 0                           ;
+; 5                                      ; 0                           ;
+; 6                                      ; 0                           ;
+; 7                                      ; 1                           ;
+; 8                                      ; 1                           ;
+; 9                                      ; 0                           ;
+; 10                                     ; 1                           ;
+; 11                                     ; 0                           ;
+; 12                                     ; 1                           ;
+; 13                                     ; 0                           ;
+; 14                                     ; 0                           ;
+; 15                                     ; 1                           ;
+; 16                                     ; 1                           ;
++----------------------------------------+-----------------------------+
+
+
++---------------------------------------------------------+
+; Parallel Expander                                       ;
++--------------------------+------------------------------+
+; Parallel Expander Length ; Number of Parallel Expanders ;
++--------------------------+------------------------------+
+; 0                        ; 0                            ;
+; 1                        ; 11                           ;
++--------------------------+------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Shareable Expander                                                            ;
++-------------------------------------------------+-----------------------------+
+; Number of shareable expanders  (Average = 1.38) ; Number of LABs  (Total = 3) ;
++-------------------------------------------------+-----------------------------+
+; 0                                               ; 5                           ;
+; 1                                               ; 1                           ;
+; 2                                               ; 0                           ;
+; 3                                               ; 0                           ;
+; 4                                               ; 1                           ;
+; 5                                               ; 0                           ;
+; 6                                               ; 1                           ;
++-------------------------------------------------+-----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Logic Cell Interconnection                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++-----+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; LAB ; Logic Cell ; Input                                                                                                                                                                                                          ; Output                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++-----+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+;  A  ; LC6        ; DS20, RW20, configured, shutup, AS20, A[16], A[17], A[18], A[19], A[20], A[23], A[21], A[22]                                                                                                                   ; TEST[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
+;  A  ; LC15       ; CLKCPU, RESET                                                                                                                                                                                                  ; POR[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
+;  A  ; LC16       ; A[16], A[17], A[18], A[19], A[20], A[23], A[21], A[22]                                                                                                                                                         ; TEST[7]                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
+;  A  ; LC10       ; CLKCPU, POR[0], RESET                                                                                                                                                                                          ; POR[2]                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
+;  A  ; LC14       ; CLKCPU, POR[1], RESET                                                                                                                                                                                          ; comb~14, TEST[6], comb~16, half_ram, data_out[7], debug_bit, data_out[6], data_out[5], data_out[4], nOVR~12, data_out[6]~43, data_out[4]~45, nOVR~15                                                                                                                                                                                                                                                                                                          ;
+;  A  ; LC13       ; POR[2], RESET                                                                                                                                                                                                  ; TEST[5]                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
+;  A  ; LC1        ; A[2], A[1], A[3], A[6], RW20, shutup, AS20, A[16], A[17], A[18], A[19], A[20], A[23], A[21], A[22], A[4], A[5], configured, DS20, comb~16                                                                      ; comb~11, configured, shutup, LED, comb~19, configured~11, comb~21, debug_bit, nOVR~12, DSACK~4                                                                                                                                                                                                                                                                                                                                                                ;
+;  A  ; LC12       ; A[2], A[1], A[3], A[6], RW20, configured, AS20, A[16], A[17], A[18], A[19], A[20], A[23], A[21], A[22], A[4], A[5], shutup, DS20, comb~16                                                                      ; comb~11, configured, shutup, comb~19, comb~21, debug_bit, nOVR~12, DSACK~4                                                                                                                                                                                                                                                                                                                                                                                    ;
+;  A  ; LC5        ; configured, shutup, AS20, A[16], A[17], A[18], A[19], A[20], A[23], A[21], A[22]                                                                                                                               ; TEST[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
+;  A  ; LC9        ; configured                                                                                                                                                                                                     ; TEST[3]                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
+;  A  ; LC7        ; CLKCPU, MEMSIZE, POR[2], RESET, half_ram                                                                                                                                                                       ; half_ram, data_out[6], data_out[5], nOVR~12, state.state_bit_2, state.state_bit_2~16, RAS[1]~reg0, data_out[4]~45, state.state_bit_2~17, Selector3~11, WideAnd0~10sexp1, WideAnd0~10sexp2, WideAnd0~10sexp3, WideAnd0~10sexp4, nOVR~15                                                                                                                                                                                                                        ;
+;  A  ; LC8        ; RW20, DS20, configured, shutup, AS20, A[16], A[17], A[18], A[19], A[20], A[23], A[21], A[22]                                                                                                                   ; TEST[2], D[7], D[5], D[6], D[4]                                                                                                                                                                                                                                                                                                                                                                                                                               ;
+;  A  ; LC11       ; POR[2], RESET, RW20, configured, shutup, AS20, A[16], A[17], A[18], A[19], A[20], A[23], A[21], A[22], debug_bit, DS20                                                                                         ; debug_bit, TEST[4]                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
+;  A  ; LC3        ; nOVR~15, configured, shutup, A[16], A[17], A[18], A[19], A[20], A[21], POR[2], AS20, A[23], A[22], half_ram                                                                                                    ; nOVR~17                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
+;  A  ; LC2        ; A[22], A[21], POR[2], AS20, A[23], A[20], half_ram                                                                                                                                                             ; nOVR~12                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
+;  B  ; LC22       ; CLKCPU, AS20                                                                                                                                                                                                   ; refresh_count[0], refresh_count[1], refresh_count[2], refresh_count[3], refresh_count[4], refresh_count[5], refresh_count[0]~67, refresh_count[1]~72                                                                                                                                                                                                                                                                                                          ;
+;  B  ; LC24       ; CLKCPU, refresh_count[2], refresh_count[3], state.state_bit_2, state.state_bit_1, state.state_bit_0, AS20, refresh_count[1], refresh_count[0], AS20_D, refresh_count[5], refresh_count[4]                      ; refresh_count[0], refresh_count[1], refresh_count[2], refresh_count[3], refresh_count[4], refresh_count[5], refresh_req, refresh_count[0]~67, refresh_count[1]~72                                                                                                                                                                                                                                                                                             ;
+;  B  ; LC23       ; CLKCPU, AS20_D, refresh_count[0], AS20, state.state_bit_0, state.state_bit_1, state.state_bit_2, refresh_count[4], refresh_count[3], refresh_count[2], refresh_count[1], refresh_count[5]                      ; refresh_count[0], refresh_count[1], refresh_count[2], refresh_count[3], refresh_count[4], refresh_count[5], refresh_req, refresh_count[0]~67, refresh_count[1]~72                                                                                                                                                                                                                                                                                             ;
+;  B  ; LC18       ; CLKCPU, refresh_count[1]~72, refresh_count[0], AS20_D, refresh_count[2], AS20, state.state_bit_0, state.state_bit_1, state.state_bit_2, refresh_count[1], refresh_count[5], refresh_count[4], refresh_count[3] ; refresh_count[0], refresh_count[1], refresh_count[2], refresh_count[3], refresh_count[4], refresh_count[5], refresh_req                                                                                                                                                                                                                                                                                                                                       ;
+;  B  ; LC25       ; CLKCPU, RW20, refresh_req, refresh_count[1], refresh_count[5], refresh_count[4], refresh_count[3], refresh_count[2], refresh_count[0], AS20, state.state_bit_0, state.state_bit_1, state.state_bit_2           ; refresh_req, state.state_bit_0, CAS[3]~reg0, Selector8~9, RAS[1]~reg0, RAS[0]~reg0, state.state_bit_2~17, Selector6~13, Selector7~15, state.state_bit_2~23, Selector12~1bal                                                                                                                                                                                                                                                                                   ;
+;  B  ; LC20       ; CLKCPU, state.state_bit_0, state.state_bit_2, AS20                                                                                                                                                             ; refresh_count[0], refresh_count[1], refresh_count[2], refresh_count[3], refresh_count[4], refresh_count[5], refresh_req, state.state_bit_2, state.state_bit_0, CAS[3]~reg0, CAS[2]~reg0, CAS[1]~reg0, Selector8~9, RAS[1]~reg0, refresh_count[0]~67, refresh_count[1]~72, Selector3~11, Selector4~10, RAMOE~reg0, Selector12~1bal                                                                                                                             ;
+;  B  ; LC17       ; refresh_count[0], AS20_D, refresh_count[5], AS20, state.state_bit_0, state.state_bit_1, state.state_bit_2, refresh_count[4], refresh_count[3]                                                                  ; refresh_count[1]                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
+;  B  ; LC19       ; CLKCPU, refresh_req, RW20, state.state_bit_1, state.state_bit_0, state.state_bit_2, AS20                                                                                                                       ; refresh_count[0], refresh_count[1], refresh_count[2], refresh_count[3], refresh_count[4], refresh_count[5], refresh_req, RAM_READY, state.state_bit_0, state.state_bit_1, CAS[3]~reg0, CAS[2]~reg0, CAS[1]~reg0, Selector8~9, Selector8~10, Selector8~11, Selector8~12, CAS[0]~reg0, RAS[1]~reg0, RAS[0]~reg0, refresh_count[0]~67, refresh_count[1]~72, state.state_bit_2~17, Selector6~13, Selector7~15, Selector3~11, RAMOE~reg0                           ;
+;  E  ; LC79       ; A[2], A[1], A[3], A[6], A[4], A[5], POR[2], RESET                                                                                                                                                              ; data_out[6]                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
+;  E  ; LC78       ; A[2], A[1], A[3], A[6], A[4], A[5], POR[2], RESET, data_out[7], DS20                                                                                                                                           ; data_out[7], D[7]                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+;  E  ; LC80       ; data_out[6]~43, A[2], A[1], A[3], A[6], A[4], A[5], POR[2], RESET, half_ram, data_out[6], DS20                                                                                                                 ; data_out[6], D[6]                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+;  E  ; LC77       ; CLKCPU, AS20, state.state_bit_0, Selector12~1bal                                                                                                                                                               ; DSACK~4, DSACK[1]                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+;  E  ; LC75       ; DS20, configured, shutup, AS20, A[16], A[17], A[18], A[19], A[20], A[23], A[21], A[22], RAM_READY                                                                                                              ; DSACK[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  E  ; LC67       ;                                                                                                                                                                                                                ; INT2                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+;  E  ; LC65       ; nOVR~12                                                                                                                                                                                                        ; nOVR                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+;  F  ; LC92       ; state.state_bit_1, RAS[0]~reg0, state.state_bit_2                                                                                                                                                              ; RAS[0]~reg0                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
+;  F  ; LC81       ; half_ram, A[5], A[1], A[4], A[3], A[6], POR[2], RESET, A[2], data_out[5], DS20                                                                                                                                 ; data_out[5], D[5]                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+;  F  ; LC83       ; data_out[4]~45, A[5], A[3], A[6], POR[2], RESET, A[4], A[2], A[1], data_out[4], DS20                                                                                                                           ; data_out[4], D[4]                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+;  F  ; LC87       ; refresh_req, RW20, state.state_bit_2, WideAnd1~4sexp1, WideAnd1~4sexp2, WideAnd0~10sexp1, WideAnd0~10sexp2, WideAnd0~10sexp3, WideAnd0~10sexp4, state.state_bit_1                                              ; RAM_READY                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
+;  F  ; LC85       ;                                                                                                                                                                                                                ; D[3]                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+;  F  ; LC86       ;                                                                                                                                                                                                                ; D[2]                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+;  F  ; LC88       ;                                                                                                                                                                                                                ; D[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+;  F  ; LC89       ;                                                                                                                                                                                                                ; D[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+;  F  ; LC93       ; CLKCPU, Selector4~10, A[23], state.state_bit_0, state.state_bit_2, A[21], A[22], refresh_req, RW20, AS20                                                                                                       ; RAS[0], RAM_MUX, Selector4~10                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
+;  F  ; LC84       ; CLKCPU, RAS[1]~reg0, RAS[0]~reg0, AS20                                                                                                                                                                         ; RAM_A~32, RAM_A~35, RAM_A~38, RAM_A~41, RAM_A~44, RAM_A~47, RAM_A~50, RAM_A~53, RAM_A~56, RAM_A~59                                                                                                                                                                                                                                                                                                                                                            ;
+;  F  ; LC82       ; half_ram, A[2], A[5], A[3], A[6], POR[2], RESET, A[1]                                                                                                                                                          ; data_out[4]                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
+;  F  ; LC91       ; CLKCPU, AS20, state.state_bit_2~16, state.state_bit_0, state.state_bit_1, state.state_bit_2                                                                                                                    ; RAMOE                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
+;  G  ; LC97       ; CLKCPU, state.state_bit_2, state.state_bit_1, state.state_bit_0, AS20, refresh_count[1], refresh_count[0], AS20_D, refresh_count[3], refresh_count[4], refresh_count[5], refresh_count[2]                      ; refresh_count[0], refresh_count[1], refresh_count[2], refresh_count[3], refresh_count[4], refresh_count[5], refresh_req, refresh_count[0]~67                                                                                                                                                                                                                                                                                                                  ;
+;  G  ; LC102      ; CLKCPU, refresh_count[2], state.state_bit_2, state.state_bit_1, state.state_bit_0, AS20, refresh_count[1], refresh_count[0], AS20_D, refresh_count[4], refresh_count[5], refresh_count[3]                      ; refresh_count[0], refresh_count[1], refresh_count[2], refresh_count[3], refresh_count[4], refresh_count[5], refresh_req, refresh_count[0]~67, refresh_count[1]~72                                                                                                                                                                                                                                                                                             ;
+;  G  ; LC99       ; CLKCPU, state.state_bit_2~17, state.state_bit_2, state.state_bit_1, A[23], A[21], A[22], half_ram, AS20                                                                                                        ; refresh_count[0], refresh_count[1], refresh_count[2], refresh_count[3], refresh_count[4], refresh_count[5], refresh_req, state.state_bit_2, state.state_bit_0, state.state_bit_1, CAS[3]~reg0, CAS[2]~reg0, CAS[1]~reg0, Selector8~10, Selector8~11, Selector8~12, CAS[0]~reg0, RAS[1]~reg0, RAS[0]~reg0, refresh_count[0]~67, refresh_count[1]~72, state.state_bit_2~17, Selector6~13, Selector7~15, Selector3~11, Selector4~10, RAMOE~reg0, Selector12~1bal ;
+;  G  ; LC110      ; CLKCPU, refresh_req, state.state_bit_1, RW20, state.state_bit_0, state.state_bit_2, A[0], A[1], CAS[3]~reg0, AS20                                                                                              ; CAS[3]~reg0, CAS[3]                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
+;  G  ; LC104      ; CLKCPU, Selector3~11, state.state_bit_2, state.state_bit_1, A[21], state.state_bit_0, A[22], refresh_req, RW20, half_ram, AS20                                                                                 ; RAS[1], RAM_MUX, Selector3~11                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
+;  G  ; LC112      ; state.state_bit_2~23, A[23], A[19], half_ram, A[20], A[22], A[21]                                                                                                                                              ; RAMOE~reg0                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
+;  G  ; LC107      ; CLKCPU, Selector6~13, CAS[2]~reg0, state.state_bit_0, state.state_bit_2, state.state_bit_1, RW20, A[1], A[0], SIZ[0], SIZ[1], AS20                                                                             ; CAS[2]~reg0, CAS[2]                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
+;  G  ; LC101      ; CLKCPU, refresh_count[0]~67, refresh_count[1], AS20_D, AS20, state.state_bit_0, state.state_bit_1, state.state_bit_2, refresh_count[5], refresh_count[4], refresh_count[3], refresh_count[2], refresh_count[0] ; refresh_count[0], refresh_count[1], refresh_count[2], refresh_count[3], refresh_count[4], refresh_count[5], refresh_req, refresh_count[1]~72                                                                                                                                                                                                                                                                                                                  ;
+;  G  ; LC100      ; refresh_count[5], AS20_D, AS20, state.state_bit_0, state.state_bit_1, state.state_bit_2, refresh_count[4], refresh_count[3], refresh_count[2]                                                                  ; refresh_count[0]                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
+;  G  ; LC109      ; CLKCPU, Selector7~15, state.state_bit_2, state.state_bit_0, state.state_bit_1, RW20, A[0], A[1], SIZ[0], SIZ[1], AS20                                                                                          ; CAS[1], Selector7~15                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+;  G  ; LC98       ; refresh_req, RW20, state.state_bit_2, A[23], A[21], A[19], half_ram, A[20], A[22], state.state_bit_0                                                                                                           ; state.state_bit_2                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+;  G  ; LC106      ; refresh_req, state.state_bit_2, state.state_bit_0, RW20                                                                                                                                                        ; CAS[2]~reg0                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
+;  G  ; LC108      ; refresh_req, state.state_bit_2, state.state_bit_0, RW20, CAS[1]~reg0                                                                                                                                           ; CAS[1]~reg0                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
+;  G  ; LC111      ; refresh_req, RW20, A[23], A[21]                                                                                                                                                                                ; state.state_bit_2~16                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+;  G  ; LC103      ; RAS[1]~reg0, state.state_bit_2, state.state_bit_1, A[21], state.state_bit_0, half_ram, A[23], A[22], A[19], A[20]                                                                                              ; RAS[1]~reg0                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
+;  G  ; LC105      ; CLKCPU, Selector8~9, Selector8~10, Selector8~11, Selector8~12, state.state_bit_0, state.state_bit_2, SIZ[1], SIZ[0], A[1], CAS[0]~reg0, AS20                                                                   ; CAS[0]~reg0, CAS[0]                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
+;  H  ; LC118      ; RAM_MUX, A[20], A[2]                                                                                                                                                                                           ; RAM_A[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  H  ; LC121      ; RAM_MUX, A[21], A[3]                                                                                                                                                                                           ; RAM_A[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  H  ; LC115      ; RAM_MUX, A[18], A[10]                                                                                                                                                                                          ; RAM_A[8]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  H  ; LC120      ; RAM_MUX, A[16], A[8]                                                                                                                                                                                           ; RAM_A[6]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  H  ; LC123      ; RAM_MUX, A[15], A[7]                                                                                                                                                                                           ; RAM_A[5]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  H  ; LC126      ; RAM_MUX, A[14], A[6]                                                                                                                                                                                           ; RAM_A[4]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  H  ; LC128      ; RAM_MUX, A[13], A[5]                                                                                                                                                                                           ; RAM_A[3]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  H  ; LC117      ; RAM_MUX, A[17], A[9]                                                                                                                                                                                           ; RAM_A[7]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  H  ; LC125      ; RAM_MUX, A[12], A[4]                                                                                                                                                                                           ; RAM_A[2]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  H  ; LC113      ; RAM_MUX, A[19], A[11]                                                                                                                                                                                          ; RAM_A[9]                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
++-----+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Fitter Device Options                                         ;
++----------------------------------------------+----------------+
+; Option                                       ; Setting        ;
++----------------------------------------------+----------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off            ;
+; Enable device-wide reset (DEV_CLRn)          ; Off            ;
+; Enable device-wide output enable (DEV_OE)    ; Off            ;
+; Enable INIT_DONE output                      ; Off            ;
+; Configuration scheme                         ; Passive Serial ;
+; Security bit                                 ; Off            ;
+; Base pin-out file on sameframe device        ; Off            ;
++----------------------------------------------+----------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (119006): Selected device EPM7128STC100-10 for design "pld_ram"
+Warning (163076): Macrocell buffer inserted after node "nOVR~12"
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4674 megabytes
+    Info: Processing ended: Sat Jun 19 12:32:56 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

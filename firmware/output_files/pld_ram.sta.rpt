@@ -1,0 +1,1228 @@
+TimeQuest Timing Analyzer report for pld_ram
+Sat Jun 19 12:33:04 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'CLKCPU'
+ 12. Setup: 'DS20'
+ 13. Hold: 'DS20'
+ 14. Hold: 'CLKCPU'
+ 15. Recovery: 'DS20'
+ 16. Removal: 'DS20'
+ 17. Minimum Pulse Width: 'CLKCPU'
+ 18. Minimum Pulse Width: 'DS20'
+ 19. Setup Times
+ 20. Hold Times
+ 21. Clock to Output Times
+ 22. Minimum Clock to Output Times
+ 23. Propagation Delay
+ 24. Minimum Propagation Delay
+ 25. Output Enable Times
+ 26. Minimum Output Enable Times
+ 27. Output Disable Times
+ 28. Minimum Output Disable Times
+ 29. Setup Transfers
+ 30. Hold Transfers
+ 31. Recovery Transfers
+ 32. Removal Transfers
+ 33. Report TCCS
+ 34. Report RSKM
+ 35. Unconstrained Paths
+ 36. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; pld_ram                                                           ;
+; Device Family      ; MAX7000S                                                          ;
+; Device Name        ; EPM7128STC100-10                                                  ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; CLKCPU     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLKCPU } ;
+; DS20       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DS20 }   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 43.48 MHz ; 43.48 MHz       ; CLKCPU     ;      ;
+; 100.0 MHz ; 100.0 MHz       ; DS20       ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------+
+; Setup Summary                    ;
++--------+---------+---------------+
+; Clock  ; Slack   ; End Point TNS ;
++--------+---------+---------------+
+; CLKCPU ; -22.000 ; -230.900      ;
+; DS20   ; -9.000  ; -63.000       ;
++--------+---------+---------------+
+
+
++--------------------------------+
+; Hold Summary                   ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; DS20   ; 0.500 ; 0.000         ;
+; CLKCPU ; 5.000 ; 0.000         ;
++--------+-------+---------------+
+
+
++---------------------------------+
+; Recovery Summary                ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; DS20  ; -12.500 ; -25.000       ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Removal Summary               ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; DS20  ; 8.500 ; 0.000         ;
++-------+-------+---------------+
+
+
++---------------------------------+
+; Minimum Pulse Width Summary     ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; CLKCPU ; -3.500 ; -168.000      ;
+; DS20   ; -3.500 ; -49.000       ;
++--------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLKCPU'                                                                                                       ;
++---------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -22.000 ; half_ram          ; RAM_READY         ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 21.000     ;
+; -17.800 ; refresh_req       ; RAMOE~reg0        ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 16.800     ;
+; -17.000 ; refresh_req       ; RAM_READY         ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 16.000     ;
+; -17.000 ; state.state_bit_2 ; RAM_READY         ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 16.000     ;
+; -17.000 ; state.state_bit_1 ; RAM_READY         ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 16.000     ;
+; -17.000 ; half_ram          ; RAMOE~reg0        ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 16.000     ;
+; -14.000 ; refresh_req       ; CAS[0]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 13.000     ;
+; -14.000 ; state.state_bit_0 ; CAS[0]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 13.000     ;
+; -14.000 ; state.state_bit_1 ; CAS[0]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 13.000     ;
+; -14.000 ; state.state_bit_2 ; CAS[0]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 13.000     ;
+; -9.800  ; state.state_bit_2 ; state.state_bit_2 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_count[0]  ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_count[5]  ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_req       ; CAS[2]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_req       ; CAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_2 ; RAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_1 ; RAS[0]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_0 ; state.state_bit_2 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_req       ; state.state_bit_2 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; half_ram          ; state.state_bit_2 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; AS20_D            ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_count[5]  ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_0 ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_1 ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_2 ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_count[4]  ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_count[3]  ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; AS20_D            ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_0 ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_1 ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_2 ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_count[4]  ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_count[3]  ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; refresh_count[2]  ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_2 ; CAS[2]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_0 ; CAS[2]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_2 ; CAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_0 ; CAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; CAS[1]~reg0       ; CAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_1 ; RAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_0 ; RAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; half_ram          ; RAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; RAS[1]~reg0       ; RAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; RAS[0]~reg0       ; RAS[0]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.800  ; state.state_bit_2 ; RAS[0]~reg0       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.800      ;
+; -9.500  ; RAS[1]~reg0       ; RAM_MUX           ; CLKCPU       ; CLKCPU      ; 0.500        ; 0.000      ; 8.000      ;
+; -9.500  ; RAS[0]~reg0       ; RAM_MUX           ; CLKCPU       ; CLKCPU      ; 0.500        ; 0.000      ; 8.000      ;
+; -9.000  ; POR[0]            ; POR[1]            ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; POR[1]            ; POR[2]            ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; POR[2]            ; half_ram          ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; half_ram          ; half_ram          ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[3]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[2]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_2 ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_1 ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_0 ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[1]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[0]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; AS20_D            ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[4]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[5]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[4]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[2]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[3]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_2 ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_1 ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_0 ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[1]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[0]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; AS20_D            ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[5]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_0 ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_1 ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_2 ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[4]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[3]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[2]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[1]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[5]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; AS20_D            ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[0]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_req       ; refresh_req       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[1]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[5]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[4]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[3]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[2]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_0 ; refresh_req       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_1 ; refresh_req       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_2 ; refresh_req       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[0]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_req       ; state.state_bit_0 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_1 ; state.state_bit_0 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_0 ; state.state_bit_0 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_2 ; state.state_bit_0 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_0 ; state.state_bit_1 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_2 ; state.state_bit_1 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_1 ; state.state_bit_2 ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; refresh_count[2]  ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000  ; state.state_bit_2 ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 1.000        ; 0.000      ; 8.000      ;
++---------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Setup: 'DS20'                                                                                            ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; -9.000 ; shutup      ; shutup      ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000 ; configured  ; shutup      ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000 ; configured  ; configured  ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000 ; shutup      ; configured  ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000 ; data_out[7] ; data_out[7] ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000 ; debug_bit   ; debug_bit   ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000 ; configured  ; debug_bit   ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000 ; shutup      ; debug_bit   ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000 ; data_out[6] ; data_out[6] ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000 ; data_out[5] ; data_out[5] ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -9.000 ; data_out[4] ; data_out[4] ; DS20         ; DS20        ; 1.000        ; 0.000      ; 8.000      ;
+; -5.300 ; POR[2]      ; data_out[6] ; CLKCPU       ; DS20        ; 0.500        ; 5.000      ; 8.800      ;
+; -5.300 ; half_ram    ; data_out[4] ; CLKCPU       ; DS20        ; 0.500        ; 5.000      ; 8.800      ;
+; -5.300 ; POR[2]      ; data_out[4] ; CLKCPU       ; DS20        ; 0.500        ; 5.000      ; 8.800      ;
+; -4.500 ; POR[2]      ; data_out[7] ; CLKCPU       ; DS20        ; 0.500        ; 5.000      ; 8.000      ;
+; -4.500 ; POR[2]      ; debug_bit   ; CLKCPU       ; DS20        ; 0.500        ; 5.000      ; 8.000      ;
+; -4.500 ; half_ram    ; data_out[6] ; CLKCPU       ; DS20        ; 0.500        ; 5.000      ; 8.000      ;
+; -4.500 ; half_ram    ; data_out[5] ; CLKCPU       ; DS20        ; 0.500        ; 5.000      ; 8.000      ;
+; -4.500 ; POR[2]      ; data_out[5] ; CLKCPU       ; DS20        ; 0.500        ; 5.000      ; 8.000      ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Hold: 'DS20'                                                                                            ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; 0.500 ; POR[2]      ; data_out[7] ; CLKCPU       ; DS20        ; -0.500       ; 5.000      ; 8.000      ;
+; 0.500 ; POR[2]      ; debug_bit   ; CLKCPU       ; DS20        ; -0.500       ; 5.000      ; 8.000      ;
+; 0.500 ; POR[2]      ; data_out[6] ; CLKCPU       ; DS20        ; -0.500       ; 5.000      ; 8.000      ;
+; 0.500 ; half_ram    ; data_out[6] ; CLKCPU       ; DS20        ; -0.500       ; 5.000      ; 8.000      ;
+; 0.500 ; half_ram    ; data_out[5] ; CLKCPU       ; DS20        ; -0.500       ; 5.000      ; 8.000      ;
+; 0.500 ; POR[2]      ; data_out[5] ; CLKCPU       ; DS20        ; -0.500       ; 5.000      ; 8.000      ;
+; 0.500 ; POR[2]      ; data_out[4] ; CLKCPU       ; DS20        ; -0.500       ; 5.000      ; 8.000      ;
+; 1.300 ; half_ram    ; data_out[4] ; CLKCPU       ; DS20        ; -0.500       ; 5.000      ; 8.800      ;
+; 5.000 ; shutup      ; shutup      ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; configured  ; shutup      ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; configured  ; configured  ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; shutup      ; configured  ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; data_out[7] ; data_out[7] ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; debug_bit   ; debug_bit   ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; configured  ; debug_bit   ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; shutup      ; debug_bit   ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; data_out[6] ; data_out[6] ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; data_out[5] ; data_out[5] ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; data_out[4] ; data_out[4] ; DS20         ; DS20        ; 0.000        ; 0.000      ; 8.000      ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLKCPU'                                                                                                      ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; 5.000 ; POR[0]            ; POR[1]            ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; POR[1]            ; POR[2]            ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; POR[2]            ; half_ram          ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; half_ram          ; half_ram          ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[3]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[2]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[1]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[0]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; AS20_D            ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[4]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[5]  ; refresh_count[3]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[4]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[2]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[3]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[1]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[0]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; AS20_D            ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[5]  ; refresh_count[4]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[4]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[3]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[2]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[1]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[5]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; AS20_D            ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[0]  ; refresh_count[5]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_req       ; refresh_req       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[1]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[5]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[4]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[3]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[2]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; refresh_req       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; refresh_req       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; refresh_req       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[0]  ; refresh_req       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_req       ; state.state_bit_0 ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; state.state_bit_0 ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; state.state_bit_0 ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; state.state_bit_0 ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; state.state_bit_1 ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; state.state_bit_1 ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; state.state_bit_2 ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; half_ram          ; state.state_bit_2 ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; state.state_bit_2 ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[2]  ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[1]  ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[0]  ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; AS20_D            ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[3]  ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[4]  ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[5]  ; refresh_count[2]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[1]  ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[0]  ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; AS20_D            ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[2]  ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[5]  ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[4]  ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[3]  ; refresh_count[1]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[0]  ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[1]  ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; AS20_D            ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[5]  ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[4]  ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[3]  ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_count[2]  ; refresh_count[0]  ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; RAM_READY         ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; CAS[3]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; CAS[3]~reg0       ; CAS[3]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; refresh_req       ; CAS[3]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; CAS[3]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; CAS[3]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; CAS[2]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; CAS[2]~reg0       ; CAS[2]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; CAS[2]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; CAS[2]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; CAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; CAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_1 ; CAS[1]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; CAS[0]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; CAS[0]~reg0       ; CAS[0]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_2 ; CAS[0]~reg0       ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; state.state_bit_0 ; RAMOE~reg0        ; CLKCPU       ; CLKCPU      ; 0.000        ; 0.000      ; 8.000      ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Recovery: 'DS20'                                                                                       ;
++---------+-----------+------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------+------------+--------------+-------------+--------------+------------+------------+
+; -12.500 ; POR[2]    ; shutup     ; CLKCPU       ; DS20        ; 0.500        ; 5.000      ; 16.000     ;
+; -12.500 ; POR[2]    ; configured ; CLKCPU       ; DS20        ; 0.500        ; 5.000      ; 16.000     ;
++---------+-----------+------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Removal: 'DS20'                                                                                      ;
++-------+-----------+------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------+--------------+-------------+--------------+------------+------------+
+; 8.500 ; POR[2]    ; shutup     ; CLKCPU       ; DS20        ; -0.500       ; 5.000      ; 16.000     ;
+; 8.500 ; POR[2]    ; configured ; CLKCPU       ; DS20        ; -0.500       ; 5.000      ; 16.000     ;
++-------+-----------+------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'CLKCPU'                                                                           ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; AS20_D                ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; AS20_D                ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; CAS[0]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; CAS[0]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; CAS[1]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; CAS[1]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; CAS[2]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; CAS[2]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; CAS[3]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; CAS[3]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; POR[0]                ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; POR[0]                ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; POR[1]                ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; POR[1]                ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; POR[2]                ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; POR[2]                ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; RAMOE~reg0            ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; RAMOE~reg0            ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Fall       ; RAM_MUX               ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Fall       ; RAM_MUX               ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; RAM_READY             ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; RAM_READY             ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; RAS[0]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; RAS[0]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; RAS[1]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; RAS[1]~reg0           ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; half_ram              ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; half_ram              ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[0]      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[0]      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[1]      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[1]      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[2]      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[2]      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[3]      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[3]      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[4]      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[4]      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[5]      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[5]      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_req           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_req           ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; state.state_bit_0     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; state.state_bit_0     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; state.state_bit_1     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; state.state_bit_1     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLKCPU ; Rise       ; state.state_bit_2     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; state.state_bit_2     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; AS20_D|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; AS20_D|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; CAS[0]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; CAS[0]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; CAS[1]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; CAS[1]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; CAS[2]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; CAS[2]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; CAS[3]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; CAS[3]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; CLKCPU|dataout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; CLKCPU|dataout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; POR[0]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; POR[0]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; POR[1]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; POR[1]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; POR[2]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; POR[2]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; RAMOE~reg0|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; RAMOE~reg0|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; RAM_MUX|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; RAM_MUX|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; RAM_READY|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; RAM_READY|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; RAS[0]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; RAS[0]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; RAS[1]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; RAS[1]~reg0|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; half_ram|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; half_ram|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_count[5]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_count[5]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; refresh_req|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; refresh_req|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; state.state_bit_0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; state.state_bit_0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; state.state_bit_1|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; state.state_bit_1|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLKCPU ; Rise       ; state.state_bit_2|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLKCPU ; Rise       ; state.state_bit_2|clk ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'DS20'                                                                       ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target           ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; DS20  ; Fall       ; configured       ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; DS20  ; Fall       ; configured       ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; DS20  ; Fall       ; data_out[4]      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; DS20  ; Fall       ; data_out[4]      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; DS20  ; Fall       ; data_out[5]      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; DS20  ; Fall       ; data_out[5]      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; DS20  ; Fall       ; data_out[6]      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; DS20  ; Fall       ; data_out[6]      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; DS20  ; Fall       ; data_out[7]      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; DS20  ; Fall       ; data_out[7]      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; DS20  ; Fall       ; debug_bit        ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; DS20  ; Fall       ; debug_bit        ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; DS20  ; Fall       ; shutup           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; DS20  ; Fall       ; shutup           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; DS20  ; Rise       ; DS20|dataout     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; DS20  ; Rise       ; DS20|dataout     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; DS20  ; Rise       ; configured|[18]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; DS20  ; Rise       ; configured|[18]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; DS20  ; Rise       ; data_out[4]|[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; DS20  ; Rise       ; data_out[4]|[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; DS20  ; Rise       ; data_out[5]|[10] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; DS20  ; Rise       ; data_out[5]|[10] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; DS20  ; Rise       ; data_out[6]|[10] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; DS20  ; Rise       ; data_out[6]|[10] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; DS20  ; Rise       ; data_out[7]|[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; DS20  ; Rise       ; data_out[7]|[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; DS20  ; Rise       ; debug_bit|[15]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; DS20  ; Rise       ; debug_bit|[15]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; DS20  ; Rise       ; shutup|[18]      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; DS20  ; Rise       ; shutup|[18]      ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A[*]      ; CLKCPU     ; 20.000 ; 20.000 ; Rise       ; CLKCPU          ;
+;  A[0]     ; CLKCPU     ; 12.000 ; 12.000 ; Rise       ; CLKCPU          ;
+;  A[1]     ; CLKCPU     ; 12.000 ; 12.000 ; Rise       ; CLKCPU          ;
+;  A[19]    ; CLKCPU     ; 20.000 ; 20.000 ; Rise       ; CLKCPU          ;
+;  A[20]    ; CLKCPU     ; 20.000 ; 20.000 ; Rise       ; CLKCPU          ;
+;  A[21]    ; CLKCPU     ; 20.000 ; 20.000 ; Rise       ; CLKCPU          ;
+;  A[22]    ; CLKCPU     ; 20.000 ; 20.000 ; Rise       ; CLKCPU          ;
+;  A[23]    ; CLKCPU     ; 20.000 ; 20.000 ; Rise       ; CLKCPU          ;
+; AS20      ; CLKCPU     ; 7.800  ; 7.800  ; Rise       ; CLKCPU          ;
+; MEMSIZE   ; CLKCPU     ; 7.000  ; 7.000  ; Rise       ; CLKCPU          ;
+; RESET     ; CLKCPU     ; 7.000  ; 7.000  ; Rise       ; CLKCPU          ;
+; RW20      ; CLKCPU     ; 15.800 ; 15.800 ; Rise       ; CLKCPU          ;
+; SIZ[*]    ; CLKCPU     ; 12.000 ; 12.000 ; Rise       ; CLKCPU          ;
+;  SIZ[0]   ; CLKCPU     ; 12.000 ; 12.000 ; Rise       ; CLKCPU          ;
+;  SIZ[1]   ; CLKCPU     ; 12.000 ; 12.000 ; Rise       ; CLKCPU          ;
+; A[*]      ; DS20       ; 2.800  ; 2.800  ; Fall       ; DS20            ;
+;  A[1]     ; DS20       ; 2.800  ; 2.800  ; Fall       ; DS20            ;
+;  A[2]     ; DS20       ; 2.800  ; 2.800  ; Fall       ; DS20            ;
+;  A[3]     ; DS20       ; 2.800  ; 2.800  ; Fall       ; DS20            ;
+;  A[4]     ; DS20       ; 2.800  ; 2.800  ; Fall       ; DS20            ;
+;  A[5]     ; DS20       ; 2.800  ; 2.800  ; Fall       ; DS20            ;
+;  A[6]     ; DS20       ; 2.800  ; 2.800  ; Fall       ; DS20            ;
+;  A[16]    ; DS20       ; 2.000  ; 2.000  ; Fall       ; DS20            ;
+;  A[17]    ; DS20       ; 2.000  ; 2.000  ; Fall       ; DS20            ;
+;  A[18]    ; DS20       ; 2.000  ; 2.000  ; Fall       ; DS20            ;
+;  A[19]    ; DS20       ; 2.000  ; 2.000  ; Fall       ; DS20            ;
+;  A[20]    ; DS20       ; 2.000  ; 2.000  ; Fall       ; DS20            ;
+;  A[21]    ; DS20       ; 2.000  ; 2.000  ; Fall       ; DS20            ;
+;  A[22]    ; DS20       ; 2.000  ; 2.000  ; Fall       ; DS20            ;
+;  A[23]    ; DS20       ; 2.000  ; 2.000  ; Fall       ; DS20            ;
+; AS20      ; DS20       ; 2.000  ; 2.000  ; Fall       ; DS20            ;
+; RESET     ; DS20       ; 2.800  ; 2.800  ; Fall       ; DS20            ;
+; RW20      ; DS20       ; 2.000  ; 2.000  ; Fall       ; DS20            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A[*]      ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+;  A[0]     ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+;  A[1]     ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+;  A[19]    ; CLKCPU     ; -2.800 ; -2.800 ; Rise       ; CLKCPU          ;
+;  A[20]    ; CLKCPU     ; -2.800 ; -2.800 ; Rise       ; CLKCPU          ;
+;  A[21]    ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+;  A[22]    ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+;  A[23]    ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+; AS20      ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+; MEMSIZE   ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+; RESET     ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+; RW20      ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+; SIZ[*]    ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+;  SIZ[0]   ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+;  SIZ[1]   ; CLKCPU     ; -2.000 ; -2.000 ; Rise       ; CLKCPU          ;
+; A[*]      ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[1]     ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[2]     ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[3]     ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[4]     ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[5]     ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[6]     ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[16]    ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[17]    ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[18]    ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[19]    ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[20]    ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[21]    ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[22]    ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+;  A[23]    ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+; AS20      ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+; RESET     ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
+; RW20      ; DS20       ; 3.000  ; 3.000  ; Fall       ; DS20            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; CAS[*]    ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  CAS[0]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  CAS[1]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  CAS[2]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  CAS[3]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+; DSACK[*]  ; CLKCPU     ; 13.000 ; 13.000 ; Rise       ; CLKCPU          ;
+;  DSACK[0] ; CLKCPU     ; 13.000 ; 13.000 ; Rise       ; CLKCPU          ;
+;  DSACK[1] ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+; RAMOE     ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+; RAS[*]    ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  RAS[0]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  RAS[1]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+; TEST[*]   ; CLKCPU     ; 13.000 ; 13.000 ; Rise       ; CLKCPU          ;
+;  TEST[5]  ; CLKCPU     ; 13.000 ; 13.000 ; Rise       ; CLKCPU          ;
+;  TEST[6]  ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+; nOVR      ; CLKCPU     ; 21.800 ; 21.800 ; Rise       ; CLKCPU          ;
+; RAM_A[*]  ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[0] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[1] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[2] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[3] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[4] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[5] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[6] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[7] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[8] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[9] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+; DSACK[*]  ; DS20       ; 10.000 ; 10.000 ; Rise       ; DS20            ;
+;  DSACK[0] ; DS20       ; 10.000 ; 10.000 ; Rise       ; DS20            ;
+; TEST[*]   ; DS20       ; 10.000 ; 10.000 ; Rise       ; DS20            ;
+;  TEST[1]  ; DS20       ; 10.000 ; 10.000 ; Rise       ; DS20            ;
+;  TEST[2]  ; DS20       ; 10.000 ; 10.000 ; Rise       ; DS20            ;
+; D[*]      ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  D[4]     ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  D[5]     ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  D[6]     ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  D[7]     ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+; DSACK[*]  ; DS20       ; 18.000 ; 18.000 ; Fall       ; DS20            ;
+;  DSACK[0] ; DS20       ; 18.000 ; 18.000 ; Fall       ; DS20            ;
+; LED       ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+; TEST[*]   ; DS20       ; 18.000 ; 18.000 ; Fall       ; DS20            ;
+;  TEST[0]  ; DS20       ; 18.000 ; 18.000 ; Fall       ; DS20            ;
+;  TEST[1]  ; DS20       ; 18.000 ; 18.000 ; Fall       ; DS20            ;
+;  TEST[2]  ; DS20       ; 18.000 ; 18.000 ; Fall       ; DS20            ;
+;  TEST[3]  ; DS20       ; 18.000 ; 18.000 ; Fall       ; DS20            ;
+;  TEST[4]  ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+; nOVR      ; DS20       ; 26.000 ; 26.000 ; Fall       ; DS20            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; CAS[*]    ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  CAS[0]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  CAS[1]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  CAS[2]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  CAS[3]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+; DSACK[*]  ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  DSACK[0] ; CLKCPU     ; 13.000 ; 13.000 ; Rise       ; CLKCPU          ;
+;  DSACK[1] ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+; RAMOE     ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+; RAS[*]    ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  RAS[0]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  RAS[1]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+; TEST[*]   ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+;  TEST[5]  ; CLKCPU     ; 13.000 ; 13.000 ; Rise       ; CLKCPU          ;
+;  TEST[6]  ; CLKCPU     ; 5.000  ; 5.000  ; Rise       ; CLKCPU          ;
+; nOVR      ; CLKCPU     ; 21.000 ; 21.000 ; Rise       ; CLKCPU          ;
+; RAM_A[*]  ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[0] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[1] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[2] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[3] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[4] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[5] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[6] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[7] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[8] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+;  RAM_A[9] ; CLKCPU     ; 13.000 ; 13.000 ; Fall       ; CLKCPU          ;
+; DSACK[*]  ; DS20       ; 10.000 ; 10.000 ; Rise       ; DS20            ;
+;  DSACK[0] ; DS20       ; 10.000 ; 10.000 ; Rise       ; DS20            ;
+; TEST[*]   ; DS20       ; 10.000 ; 10.000 ; Rise       ; DS20            ;
+;  TEST[1]  ; DS20       ; 10.000 ; 10.000 ; Rise       ; DS20            ;
+;  TEST[2]  ; DS20       ; 10.000 ; 10.000 ; Rise       ; DS20            ;
+; D[*]      ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  D[4]     ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  D[5]     ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  D[6]     ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  D[7]     ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+; DSACK[*]  ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  DSACK[0] ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+; LED       ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+; TEST[*]   ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  TEST[0]  ; DS20       ; 18.000 ; 18.000 ; Fall       ; DS20            ;
+;  TEST[1]  ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  TEST[2]  ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+;  TEST[3]  ; DS20       ; 18.000 ; 18.000 ; Fall       ; DS20            ;
+;  TEST[4]  ; DS20       ; 10.000 ; 10.000 ; Fall       ; DS20            ;
+; nOVR      ; DS20       ; 26.000 ; 26.000 ; Fall       ; DS20            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; A[2]       ; RAM_A[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[3]       ; RAM_A[1]    ; 10.000 ;        ;        ; 10.000 ;
+; A[4]       ; RAM_A[2]    ; 10.000 ;        ;        ; 10.000 ;
+; A[5]       ; RAM_A[3]    ; 10.000 ;        ;        ; 10.000 ;
+; A[6]       ; RAM_A[4]    ; 10.000 ;        ;        ; 10.000 ;
+; A[7]       ; RAM_A[5]    ; 10.000 ;        ;        ; 10.000 ;
+; A[8]       ; RAM_A[6]    ; 10.000 ;        ;        ; 10.000 ;
+; A[9]       ; RAM_A[7]    ; 10.000 ;        ;        ; 10.000 ;
+; A[10]      ; RAM_A[8]    ; 10.000 ;        ;        ; 10.000 ;
+; A[11]      ; RAM_A[9]    ; 10.000 ;        ;        ; 10.000 ;
+; A[12]      ; RAM_A[2]    ; 10.000 ;        ;        ; 10.000 ;
+; A[13]      ; RAM_A[3]    ; 10.000 ;        ;        ; 10.000 ;
+; A[14]      ; RAM_A[4]    ; 10.000 ;        ;        ; 10.000 ;
+; A[15]      ; RAM_A[5]    ; 10.000 ;        ;        ; 10.000 ;
+; A[16]      ; D[4]        ;        ; 16.500 ; 16.500 ;        ;
+; A[16]      ; D[5]        ;        ; 16.500 ; 16.500 ;        ;
+; A[16]      ; D[6]        ;        ; 16.500 ; 16.500 ;        ;
+; A[16]      ; D[7]        ;        ; 16.500 ; 16.500 ;        ;
+; A[16]      ; DSACK[0]    ;        ; 10.000 ; 10.000 ;        ;
+; A[16]      ; RAM_A[6]    ; 10.000 ;        ;        ; 10.000 ;
+; A[16]      ; TEST[0]     ;        ; 10.000 ; 10.000 ;        ;
+; A[16]      ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; A[16]      ; TEST[2]     ;        ; 10.000 ; 10.000 ;        ;
+; A[16]      ; TEST[7]     ;        ; 10.000 ; 10.000 ;        ;
+; A[16]      ; nOVR        ;        ; 18.000 ; 18.000 ;        ;
+; A[17]      ; D[4]        ;        ; 16.500 ; 16.500 ;        ;
+; A[17]      ; D[5]        ;        ; 16.500 ; 16.500 ;        ;
+; A[17]      ; D[6]        ;        ; 16.500 ; 16.500 ;        ;
+; A[17]      ; D[7]        ;        ; 16.500 ; 16.500 ;        ;
+; A[17]      ; DSACK[0]    ;        ; 10.000 ; 10.000 ;        ;
+; A[17]      ; RAM_A[7]    ; 10.000 ;        ;        ; 10.000 ;
+; A[17]      ; TEST[0]     ;        ; 10.000 ; 10.000 ;        ;
+; A[17]      ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; A[17]      ; TEST[2]     ;        ; 10.000 ; 10.000 ;        ;
+; A[17]      ; TEST[7]     ;        ; 10.000 ; 10.000 ;        ;
+; A[17]      ; nOVR        ;        ; 18.000 ; 18.000 ;        ;
+; A[18]      ; D[4]        ;        ; 16.500 ; 16.500 ;        ;
+; A[18]      ; D[5]        ;        ; 16.500 ; 16.500 ;        ;
+; A[18]      ; D[6]        ;        ; 16.500 ; 16.500 ;        ;
+; A[18]      ; D[7]        ;        ; 16.500 ; 16.500 ;        ;
+; A[18]      ; DSACK[0]    ;        ; 10.000 ; 10.000 ;        ;
+; A[18]      ; RAM_A[8]    ; 10.000 ;        ;        ; 10.000 ;
+; A[18]      ; TEST[0]     ;        ; 10.000 ; 10.000 ;        ;
+; A[18]      ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; A[18]      ; TEST[2]     ;        ; 10.000 ; 10.000 ;        ;
+; A[18]      ; TEST[7]     ;        ; 10.000 ; 10.000 ;        ;
+; A[18]      ; nOVR        ;        ; 18.000 ; 18.000 ;        ;
+; A[19]      ; D[4]        ; 16.500 ;        ;        ; 16.500 ;
+; A[19]      ; D[5]        ; 16.500 ;        ;        ; 16.500 ;
+; A[19]      ; D[6]        ; 16.500 ;        ;        ; 16.500 ;
+; A[19]      ; D[7]        ; 16.500 ;        ;        ; 16.500 ;
+; A[19]      ; DSACK[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; RAM_A[9]    ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; TEST[0]     ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; TEST[1]     ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; TEST[2]     ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; TEST[7]     ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; nOVR        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
+; A[20]      ; D[4]        ;        ; 16.500 ; 16.500 ;        ;
+; A[20]      ; D[5]        ;        ; 16.500 ; 16.500 ;        ;
+; A[20]      ; D[6]        ;        ; 16.500 ; 16.500 ;        ;
+; A[20]      ; D[7]        ;        ; 16.500 ; 16.500 ;        ;
+; A[20]      ; DSACK[0]    ;        ; 10.000 ; 10.000 ;        ;
+; A[20]      ; RAM_A[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[20]      ; TEST[0]     ;        ; 10.000 ; 10.000 ;        ;
+; A[20]      ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; A[20]      ; TEST[2]     ;        ; 10.000 ; 10.000 ;        ;
+; A[20]      ; TEST[7]     ;        ; 10.000 ; 10.000 ;        ;
+; A[20]      ; nOVR        ;        ; 18.800 ; 18.800 ;        ;
+; A[21]      ; D[4]        ; 16.500 ;        ;        ; 16.500 ;
+; A[21]      ; D[5]        ; 16.500 ;        ;        ; 16.500 ;
+; A[21]      ; D[6]        ; 16.500 ;        ;        ; 16.500 ;
+; A[21]      ; D[7]        ; 16.500 ;        ;        ; 16.500 ;
+; A[21]      ; DSACK[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; RAM_A[1]    ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; TEST[0]     ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; TEST[1]     ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; TEST[2]     ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; TEST[7]     ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; nOVR        ; 18.800 ; 18.800 ; 18.800 ; 18.800 ;
+; A[22]      ; D[4]        ; 16.500 ;        ;        ; 16.500 ;
+; A[22]      ; D[5]        ; 16.500 ;        ;        ; 16.500 ;
+; A[22]      ; D[6]        ; 16.500 ;        ;        ; 16.500 ;
+; A[22]      ; D[7]        ; 16.500 ;        ;        ; 16.500 ;
+; A[22]      ; DSACK[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[22]      ; TEST[0]     ; 10.000 ;        ;        ; 10.000 ;
+; A[22]      ; TEST[1]     ; 10.000 ;        ;        ; 10.000 ;
+; A[22]      ; TEST[2]     ; 10.000 ;        ;        ; 10.000 ;
+; A[22]      ; TEST[7]     ; 10.000 ;        ;        ; 10.000 ;
+; A[22]      ; nOVR        ; 18.800 ; 18.800 ; 18.800 ; 18.800 ;
+; A[23]      ; D[4]        ; 16.500 ;        ;        ; 16.500 ;
+; A[23]      ; D[5]        ; 16.500 ;        ;        ; 16.500 ;
+; A[23]      ; D[6]        ; 16.500 ;        ;        ; 16.500 ;
+; A[23]      ; D[7]        ; 16.500 ;        ;        ; 16.500 ;
+; A[23]      ; DSACK[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[23]      ; TEST[0]     ; 10.000 ;        ;        ; 10.000 ;
+; A[23]      ; TEST[1]     ; 10.000 ;        ;        ; 10.000 ;
+; A[23]      ; TEST[2]     ; 10.000 ;        ;        ; 10.000 ;
+; A[23]      ; TEST[7]     ; 10.000 ;        ;        ; 10.000 ;
+; A[23]      ; nOVR        ; 18.000 ; 18.800 ; 18.800 ; 18.000 ;
+; AS20       ; D[4]        ;        ; 16.500 ; 16.500 ;        ;
+; AS20       ; D[5]        ;        ; 16.500 ; 16.500 ;        ;
+; AS20       ; D[6]        ;        ; 16.500 ; 16.500 ;        ;
+; AS20       ; D[7]        ;        ; 16.500 ; 16.500 ;        ;
+; AS20       ; DSACK[0]    ;        ; 10.000 ; 10.000 ;        ;
+; AS20       ; TEST[0]     ;        ; 10.000 ; 10.000 ;        ;
+; AS20       ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; AS20       ; TEST[2]     ;        ; 10.000 ; 10.000 ;        ;
+; AS20       ; nOVR        ;        ; 18.800 ; 18.800 ;        ;
+; RESET      ; TEST[5]     ; 10.000 ;        ;        ; 10.000 ;
+; RW20       ; D[4]        ; 16.500 ;        ;        ; 16.500 ;
+; RW20       ; D[5]        ; 16.500 ;        ;        ; 16.500 ;
+; RW20       ; D[6]        ; 16.500 ;        ;        ; 16.500 ;
+; RW20       ; D[7]        ; 16.500 ;        ;        ; 16.500 ;
+; RW20       ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; RW20       ; TEST[2]     ; 10.000 ;        ;        ; 10.000 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; A[2]       ; RAM_A[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[3]       ; RAM_A[1]    ; 10.000 ;        ;        ; 10.000 ;
+; A[4]       ; RAM_A[2]    ; 10.000 ;        ;        ; 10.000 ;
+; A[5]       ; RAM_A[3]    ; 10.000 ;        ;        ; 10.000 ;
+; A[6]       ; RAM_A[4]    ; 10.000 ;        ;        ; 10.000 ;
+; A[7]       ; RAM_A[5]    ; 10.000 ;        ;        ; 10.000 ;
+; A[8]       ; RAM_A[6]    ; 10.000 ;        ;        ; 10.000 ;
+; A[9]       ; RAM_A[7]    ; 10.000 ;        ;        ; 10.000 ;
+; A[10]      ; RAM_A[8]    ; 10.000 ;        ;        ; 10.000 ;
+; A[11]      ; RAM_A[9]    ; 10.000 ;        ;        ; 10.000 ;
+; A[12]      ; RAM_A[2]    ; 10.000 ;        ;        ; 10.000 ;
+; A[13]      ; RAM_A[3]    ; 10.000 ;        ;        ; 10.000 ;
+; A[14]      ; RAM_A[4]    ; 10.000 ;        ;        ; 10.000 ;
+; A[15]      ; RAM_A[5]    ; 10.000 ;        ;        ; 10.000 ;
+; A[16]      ; D[4]        ;        ; 16.500 ; 16.500 ;        ;
+; A[16]      ; D[5]        ;        ; 16.500 ; 16.500 ;        ;
+; A[16]      ; D[6]        ;        ; 16.500 ; 16.500 ;        ;
+; A[16]      ; D[7]        ;        ; 16.500 ; 16.500 ;        ;
+; A[16]      ; DSACK[0]    ;        ; 10.000 ; 10.000 ;        ;
+; A[16]      ; RAM_A[6]    ; 10.000 ;        ;        ; 10.000 ;
+; A[16]      ; TEST[0]     ;        ; 10.000 ; 10.000 ;        ;
+; A[16]      ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; A[16]      ; TEST[2]     ;        ; 10.000 ; 10.000 ;        ;
+; A[16]      ; TEST[7]     ;        ; 10.000 ; 10.000 ;        ;
+; A[16]      ; nOVR        ;        ; 18.000 ; 18.000 ;        ;
+; A[17]      ; D[4]        ;        ; 16.500 ; 16.500 ;        ;
+; A[17]      ; D[5]        ;        ; 16.500 ; 16.500 ;        ;
+; A[17]      ; D[6]        ;        ; 16.500 ; 16.500 ;        ;
+; A[17]      ; D[7]        ;        ; 16.500 ; 16.500 ;        ;
+; A[17]      ; DSACK[0]    ;        ; 10.000 ; 10.000 ;        ;
+; A[17]      ; RAM_A[7]    ; 10.000 ;        ;        ; 10.000 ;
+; A[17]      ; TEST[0]     ;        ; 10.000 ; 10.000 ;        ;
+; A[17]      ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; A[17]      ; TEST[2]     ;        ; 10.000 ; 10.000 ;        ;
+; A[17]      ; TEST[7]     ;        ; 10.000 ; 10.000 ;        ;
+; A[17]      ; nOVR        ;        ; 18.000 ; 18.000 ;        ;
+; A[18]      ; D[4]        ;        ; 16.500 ; 16.500 ;        ;
+; A[18]      ; D[5]        ;        ; 16.500 ; 16.500 ;        ;
+; A[18]      ; D[6]        ;        ; 16.500 ; 16.500 ;        ;
+; A[18]      ; D[7]        ;        ; 16.500 ; 16.500 ;        ;
+; A[18]      ; DSACK[0]    ;        ; 10.000 ; 10.000 ;        ;
+; A[18]      ; RAM_A[8]    ; 10.000 ;        ;        ; 10.000 ;
+; A[18]      ; TEST[0]     ;        ; 10.000 ; 10.000 ;        ;
+; A[18]      ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; A[18]      ; TEST[2]     ;        ; 10.000 ; 10.000 ;        ;
+; A[18]      ; TEST[7]     ;        ; 10.000 ; 10.000 ;        ;
+; A[18]      ; nOVR        ;        ; 18.000 ; 18.000 ;        ;
+; A[19]      ; D[4]        ; 16.500 ;        ;        ; 16.500 ;
+; A[19]      ; D[5]        ; 16.500 ;        ;        ; 16.500 ;
+; A[19]      ; D[6]        ; 16.500 ;        ;        ; 16.500 ;
+; A[19]      ; D[7]        ; 16.500 ;        ;        ; 16.500 ;
+; A[19]      ; DSACK[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; RAM_A[9]    ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; TEST[0]     ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; TEST[1]     ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; TEST[2]     ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; TEST[7]     ; 10.000 ;        ;        ; 10.000 ;
+; A[19]      ; nOVR        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
+; A[20]      ; D[4]        ;        ; 16.500 ; 16.500 ;        ;
+; A[20]      ; D[5]        ;        ; 16.500 ; 16.500 ;        ;
+; A[20]      ; D[6]        ;        ; 16.500 ; 16.500 ;        ;
+; A[20]      ; D[7]        ;        ; 16.500 ; 16.500 ;        ;
+; A[20]      ; DSACK[0]    ;        ; 10.000 ; 10.000 ;        ;
+; A[20]      ; RAM_A[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[20]      ; TEST[0]     ;        ; 10.000 ; 10.000 ;        ;
+; A[20]      ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; A[20]      ; TEST[2]     ;        ; 10.000 ; 10.000 ;        ;
+; A[20]      ; TEST[7]     ;        ; 10.000 ; 10.000 ;        ;
+; A[20]      ; nOVR        ;        ; 18.000 ; 18.000 ;        ;
+; A[21]      ; D[4]        ; 16.500 ;        ;        ; 16.500 ;
+; A[21]      ; D[5]        ; 16.500 ;        ;        ; 16.500 ;
+; A[21]      ; D[6]        ; 16.500 ;        ;        ; 16.500 ;
+; A[21]      ; D[7]        ; 16.500 ;        ;        ; 16.500 ;
+; A[21]      ; DSACK[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; RAM_A[1]    ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; TEST[0]     ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; TEST[1]     ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; TEST[2]     ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; TEST[7]     ; 10.000 ;        ;        ; 10.000 ;
+; A[21]      ; nOVR        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
+; A[22]      ; D[4]        ; 16.500 ;        ;        ; 16.500 ;
+; A[22]      ; D[5]        ; 16.500 ;        ;        ; 16.500 ;
+; A[22]      ; D[6]        ; 16.500 ;        ;        ; 16.500 ;
+; A[22]      ; D[7]        ; 16.500 ;        ;        ; 16.500 ;
+; A[22]      ; DSACK[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[22]      ; TEST[0]     ; 10.000 ;        ;        ; 10.000 ;
+; A[22]      ; TEST[1]     ; 10.000 ;        ;        ; 10.000 ;
+; A[22]      ; TEST[2]     ; 10.000 ;        ;        ; 10.000 ;
+; A[22]      ; TEST[7]     ; 10.000 ;        ;        ; 10.000 ;
+; A[22]      ; nOVR        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
+; A[23]      ; D[4]        ; 16.500 ;        ;        ; 16.500 ;
+; A[23]      ; D[5]        ; 16.500 ;        ;        ; 16.500 ;
+; A[23]      ; D[6]        ; 16.500 ;        ;        ; 16.500 ;
+; A[23]      ; D[7]        ; 16.500 ;        ;        ; 16.500 ;
+; A[23]      ; DSACK[0]    ; 10.000 ;        ;        ; 10.000 ;
+; A[23]      ; TEST[0]     ; 10.000 ;        ;        ; 10.000 ;
+; A[23]      ; TEST[1]     ; 10.000 ;        ;        ; 10.000 ;
+; A[23]      ; TEST[2]     ; 10.000 ;        ;        ; 10.000 ;
+; A[23]      ; TEST[7]     ; 10.000 ;        ;        ; 10.000 ;
+; A[23]      ; nOVR        ; 18.000 ; 18.000 ; 18.000 ; 18.000 ;
+; AS20       ; D[4]        ;        ; 16.500 ; 16.500 ;        ;
+; AS20       ; D[5]        ;        ; 16.500 ; 16.500 ;        ;
+; AS20       ; D[6]        ;        ; 16.500 ; 16.500 ;        ;
+; AS20       ; D[7]        ;        ; 16.500 ; 16.500 ;        ;
+; AS20       ; DSACK[0]    ;        ; 10.000 ; 10.000 ;        ;
+; AS20       ; TEST[0]     ;        ; 10.000 ; 10.000 ;        ;
+; AS20       ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; AS20       ; TEST[2]     ;        ; 10.000 ; 10.000 ;        ;
+; AS20       ; nOVR        ;        ; 18.000 ; 18.000 ;        ;
+; RESET      ; TEST[5]     ; 10.000 ;        ;        ; 10.000 ;
+; RW20       ; D[4]        ; 16.500 ;        ;        ; 16.500 ;
+; RW20       ; D[5]        ; 16.500 ;        ;        ; 16.500 ;
+; RW20       ; D[6]        ; 16.500 ;        ;        ; 16.500 ;
+; RW20       ; D[7]        ; 16.500 ;        ;        ; 16.500 ;
+; RW20       ; TEST[1]     ;        ; 10.000 ; 10.000 ;        ;
+; RW20       ; TEST[2]     ; 10.000 ;        ;        ; 10.000 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++-----------------------------------------------------------------------+
+; Output Enable Times                                                   ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; D[*]      ; DS20       ; 16.500 ;      ; Rise       ; DS20            ;
+;  D[4]     ; DS20       ; 16.500 ;      ; Rise       ; DS20            ;
+;  D[5]     ; DS20       ; 16.500 ;      ; Rise       ; DS20            ;
+;  D[6]     ; DS20       ; 16.500 ;      ; Rise       ; DS20            ;
+;  D[7]     ; DS20       ; 16.500 ;      ; Rise       ; DS20            ;
+; D[*]      ; DS20       ; 24.500 ;      ; Fall       ; DS20            ;
+;  D[4]     ; DS20       ; 24.500 ;      ; Fall       ; DS20            ;
+;  D[5]     ; DS20       ; 24.500 ;      ; Fall       ; DS20            ;
+;  D[6]     ; DS20       ; 24.500 ;      ; Fall       ; DS20            ;
+;  D[7]     ; DS20       ; 24.500 ;      ; Fall       ; DS20            ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Output Enable Times                                           ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; D[*]      ; DS20       ; 16.500 ;      ; Rise       ; DS20            ;
+;  D[4]     ; DS20       ; 16.500 ;      ; Rise       ; DS20            ;
+;  D[5]     ; DS20       ; 16.500 ;      ; Rise       ; DS20            ;
+;  D[6]     ; DS20       ; 16.500 ;      ; Rise       ; DS20            ;
+;  D[7]     ; DS20       ; 16.500 ;      ; Rise       ; DS20            ;
+; D[*]      ; DS20       ; 16.500 ;      ; Fall       ; DS20            ;
+;  D[4]     ; DS20       ; 16.500 ;      ; Fall       ; DS20            ;
+;  D[5]     ; DS20       ; 16.500 ;      ; Fall       ; DS20            ;
+;  D[6]     ; DS20       ; 16.500 ;      ; Fall       ; DS20            ;
+;  D[7]     ; DS20       ; 16.500 ;      ; Fall       ; DS20            ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; D[*]      ; DS20       ; 16.500    ;           ; Rise       ; DS20            ;
+;  D[4]     ; DS20       ; 16.500    ;           ; Rise       ; DS20            ;
+;  D[5]     ; DS20       ; 16.500    ;           ; Rise       ; DS20            ;
+;  D[6]     ; DS20       ; 16.500    ;           ; Rise       ; DS20            ;
+;  D[7]     ; DS20       ; 16.500    ;           ; Rise       ; DS20            ;
+; D[*]      ; DS20       ; 24.500    ;           ; Fall       ; DS20            ;
+;  D[4]     ; DS20       ; 24.500    ;           ; Fall       ; DS20            ;
+;  D[5]     ; DS20       ; 24.500    ;           ; Fall       ; DS20            ;
+;  D[6]     ; DS20       ; 24.500    ;           ; Fall       ; DS20            ;
+;  D[7]     ; DS20       ; 24.500    ;           ; Fall       ; DS20            ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; D[*]      ; DS20       ; 16.500    ;           ; Rise       ; DS20            ;
+;  D[4]     ; DS20       ; 16.500    ;           ; Rise       ; DS20            ;
+;  D[5]     ; DS20       ; 16.500    ;           ; Rise       ; DS20            ;
+;  D[6]     ; DS20       ; 16.500    ;           ; Rise       ; DS20            ;
+;  D[7]     ; DS20       ; 16.500    ;           ; Rise       ; DS20            ;
+; D[*]      ; DS20       ; 16.500    ;           ; Fall       ; DS20            ;
+;  D[4]     ; DS20       ; 16.500    ;           ; Fall       ; DS20            ;
+;  D[5]     ; DS20       ; 16.500    ;           ; Fall       ; DS20            ;
+;  D[6]     ; DS20       ; 16.500    ;           ; Fall       ; DS20            ;
+;  D[7]     ; DS20       ; 16.500    ;           ; Fall       ; DS20            ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLKCPU     ; CLKCPU   ; 355      ; 0        ; 2        ; 0        ;
+; CLKCPU     ; DS20     ; 0        ; 0        ; 19       ; 0        ;
+; DS20       ; DS20     ; 0        ; 0        ; 0        ; 18       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLKCPU     ; CLKCPU   ; 355      ; 0        ; 2        ; 0        ;
+; CLKCPU     ; DS20     ; 0        ; 0        ; 19       ; 0        ;
+; DS20       ; DS20     ; 0        ; 0        ; 0        ; 18       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLKCPU     ; DS20     ; 0        ; 0        ; 2        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLKCPU     ; DS20     ; 0        ; 0        ; 2        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 31    ; 31   ;
+; Unconstrained Input Port Paths  ; 269   ; 269  ;
+; Unconstrained Output Ports      ; 33    ; 33   ;
+; Unconstrained Output Port Paths ; 171   ; 171  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Jun 19 12:33:00 2021
+Info: Command: quartus_sta pld_ram -c pld_ram
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'pld_ram.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name DS20 DS20
+    Info (332105): create_clock -period 1.000 -name CLKCPU CLKCPU
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -22.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -22.000      -230.900 CLKCPU 
+    Info (332119):    -9.000       -63.000 DS20 
+Info (332146): Worst-case hold slack is 0.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.500         0.000 DS20 
+    Info (332119):     5.000         0.000 CLKCPU 
+Info (332146): Worst-case recovery slack is -12.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -12.500       -25.000 DS20 
+Info (332146): Worst-case removal slack is 8.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     8.500         0.000 DS20 
+Info (332146): Worst-case minimum pulse width slack is -3.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.500      -168.000 CLKCPU 
+    Info (332119):    -3.500       -49.000 DS20 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4507 megabytes
+    Info: Processing ended: Sat Jun 19 12:33:04 2021
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:01
+
+
