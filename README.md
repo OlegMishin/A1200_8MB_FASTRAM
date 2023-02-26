@@ -29,6 +29,7 @@ First working sample (Rev 0). Had to cut a bit as it was not fit to the Amiga tr
 # Revision 2 came as a bug fix:
 1. Fixed short circuit between data bus by a via.
 2. Corrected pcb outline to fit Amiga without any mechanical modification.
+3. Added crystal footprint if the RTC is M6242B 
 
 This revision has not yet been tested but DRC issues no errors.
 
