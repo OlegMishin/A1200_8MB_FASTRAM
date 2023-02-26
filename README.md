@@ -23,3 +23,14 @@ First working sample (Rev 0). Had to cut a bit as it was not fit to the Amiga tr
 
 ![изображение](https://user-images.githubusercontent.com/81614352/143570562-13b7ab25-e2c9-43bb-961f-28bec9fde4e3.png)
 
+
+
+
+# Revision 2 came as a bug fix:
+1. Fixed short circuit between data bus by a via.
+2. Corrected pcb outline to fit Amiga without any mechanical modification.
+
+This revision has not yet been tested but DRC issues no errors.
+
+![image](https://user-images.githubusercontent.com/81614352/221422382-829dd254-3c9b-4f75-8457-412ce4442fc7.png)
+
