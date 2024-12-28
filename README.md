@@ -39,19 +39,35 @@ This revision has not yet been tested but DRC issues no errors.
 (Based on https://github.com/SukkoPera/OpenAmiga500FastRamExpansion)
 
 AS4C1M116E5	    Alliance	
+
 GM71C18160	    Hynix/LGS	
+
 HY5118164B	    Hynix	
+
 KM416C1200AJ	  SEC	
+
 KM416C1204AJ/BJ	SEC	
+
 MSM5118160	    OKI	
+
 TMS41860DZ	    Texas Instruments	
+
 4218160		      NEC	
+
 4218165	        NEC	
+
 VG2618165BJ	    Vanguard	
+
 NN5118160AJ-60	NPN	
+
 NN5118165AJ-60	NPN
+
 GM71C18163	    LGS	
+
 51C16165CJB-6   MDT
+
 TMS418169DZ	    Texas Instruments
+
 HYB5118160BSJ	  Siemens
+
 
