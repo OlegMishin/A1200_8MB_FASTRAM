@@ -38,7 +38,7 @@ This revision has not yet been tested but DRC issues no errors.
 # Suitable DRAM list:
 (Based on https://github.com/SukkoPera/OpenAmiga500FastRamExpansion)
 
-AS4C1M116E5	    Alliance	
+AS4C1M16E5 	    Alliance	
 
 GM71C18160	    Hynix/LGS	
 
